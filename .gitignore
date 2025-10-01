@@ -1,0 +1,87 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependencies
+node_modules
+.pnp
+.pnp.js
+
+# Testing
+/coverage
+
+# Next.js
+/.next/
+/out/
+.next
+out
+
+# Production
+/build
+dist
+dist-ssr
+
+# Misc
+.DS_Store
+*.pem
+*.local
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local env files
+.env
+.env*.local
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Vercel
+.vercel
+
+# Typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# Webpack/Cache files
+.cache
+/cache
+*.pack.gz
+*.pack.gz_
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Clerk configuration (can include secrets)
+/.clerk/
+
+# Embedded repositories
+my-clerk-app
+
+# Executable files and installers
+*.exe
+
+# Large archives
+*.zip
+
+# VS Code extensions
+*.vsix
+*.VSIXPackage
+
+# OS files
+Thumbs.db
