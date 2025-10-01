@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { SignUp, SignIn, useUser, useClerk } from '@clerk/clerk-react';
+import { useUser } from '@clerk/clerk-react';
 import { useRouter } from 'next/router';
 import dynamic from 'next/dynamic';
-import Loader from '/components/Loader';
 
 const SignUp = dynamic(() => import('@clerk/nextjs').then(mod => ({ default: mod.SignUp })), {
   ssr: false,
@@ -13,9 +12,6 @@ const SignIn = dynamic(() => import('@clerk/nextjs').then(mod => ({ default: mod
   ssr: false,
   loading: () => <div className="p-4 text-center">Loading...</div>
 });
-
-import Dashboard from './Dashboard';
-import { useRouter } from 'next/router';
 
 const Page1 = () => {
   const [authMode, setAuthMode] = useState('signup');
