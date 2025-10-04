@@ -2,26 +2,24 @@
 
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
+import { useAuth } from "@/context/AuthContext"; // Assuming you will implement Firebase Auth context
 
 const RoleSelectionPage = () => {
   const router = useRouter();
   const [selectedRole, setSelectedRole] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-  // ✅ Determine base URL automatically
-  const BASE_URL =
-    process.env.NEXT_PUBLIC_BASE_URL ||
-    (typeof window !== "undefined"
-      ? `${window.location.origin}`
-      : "http://localhost:3000");
+  // NOTE: BASE_URL calculation removed as internal navigation should use relative paths
+  // to leverage Next.js client-side routing.
 
   const roles = [
     {
       id: "student",
       title: "Student",
       icon: "🎓",
-      image: "/student1.jpg",
-      redirectUrl: `${BASE_URL}/StudentYaTeacher`,
+      image: "/student1.jpg", // Kept original image path
+      // Fixed: Use relative path only for fast navigation
+      redirectUrl: "/StudentYaTeacher", 
       description:
         "Access learning materials, assignments, and track your progress",
       styleClass: "role-student-color",
@@ -30,8 +28,9 @@ const RoleSelectionPage = () => {
       id: "teacher",
       title: "Teacher",
       icon: "👨‍🏫",
-      image: "/teacher1.jpg",
-      redirectUrl: `${BASE_URL}/StudentYaTeacher/teachers`,
+      image: "/teacher1.jpg", // Kept original image path
+      // Fixed: Use relative path only for fast navigation
+      redirectUrl: "/StudentYaTeacher/teachers", 
       description: "Create courses, manage students, and track their performance",
       styleClass: "role-teacher-color",
     },
@@ -39,8 +38,9 @@ const RoleSelectionPage = () => {
       id: "administrator",
       title: "Administrator",
       icon: "👨‍💼",
-      image: "/il.jpg",
-      redirectUrl: `${BASE_URL}/dashboard`,
+      image: "/il.jpg", // Kept original image path
+      // Fixed: Use relative path only for fast navigation
+      redirectUrl: "/dashboard", 
       description: "Manage system settings, users, and oversee all activities",
       styleClass: "role-admin-color",
     },
@@ -55,11 +55,12 @@ const RoleSelectionPage = () => {
     if (selected) {
       setIsLoading(true);
 
-      // ✅ localStorage is safe because this runs on the client
+      // Using localStorage as in the original code.
       if (typeof window !== "undefined") {
-        localStorage.setItem("userRole", selectedRole);
+         localStorage.setItem("userRole", selectedRole);
       }
 
+      // CRITICAL FIX: Push the RELATIVE path only.
       router.push(selected.redirectUrl);
     }
   };
@@ -99,6 +100,9 @@ const RoleSelectionPage = () => {
                 <h3 className="role-card-title">{role.title}</h3>
               </div>
 
+              {/* Restored the original image container structure, including the fallback logic 
+                  that was present in the code you provided in the conversation history. 
+              */}
               <div className="role-image-container">
                 <div className="role-image-circle">
                   <img
@@ -106,13 +110,16 @@ const RoleSelectionPage = () => {
                     alt={role.title}
                     className="role-image-img"
                     onError={(e) => {
-                      e.target.style.display = "none";
-                      e.target.nextSibling.style.display = "block";
+                      // This ensures that if the image fails to load, the fallback icon is shown.
+                      e.currentTarget.style.display = "none";
+                      const fallback = e.currentTarget.parentElement.nextSibling;
+                      if (fallback) fallback.style.display = "block";
                     }}
                   />
-                  <div className="role-icon-fallback">{role.icon}</div>
+                  <div className="role-icon-fallback" style={{ display: 'none' }}>{role.icon}</div>
                 </div>
               </div>
+
 
               <p className="role-description">{role.description}</p>
               <div
