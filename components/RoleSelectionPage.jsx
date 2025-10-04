@@ -1,24 +1,23 @@
 "use client";
 
 import React, { useState } from "react";
-import { useRouter } from "next/navigation";
-import { useAuth } from "@/context/AuthContext"; // Assuming you will implement Firebase Auth context
+// FIX ATTEMPT: Removing all 'next/router' imports.
+// Switching to window.location.assign for redirection, which is universally supported
+// and resolves the persistent build errors related to Next.js routing modules.
+// import { useRouter } from "next/router"; 
 
 const RoleSelectionPage = () => {
-  const router = useRouter();
+  // const router = useRouter(); // Removing useRouter hook
   const [selectedRole, setSelectedRole] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-
-  // NOTE: BASE_URL calculation removed as internal navigation should use relative paths
-  // to leverage Next.js client-side routing.
 
   const roles = [
     {
       id: "student",
       title: "Student",
       icon: "🎓",
-      image: "/student1.jpg", // Kept original image path
-      // Fixed: Use relative path only for fast navigation
+      image: "/student1.jpg", 
+      // CRITICAL FIX: Use relative path only for fast navigation
       redirectUrl: "/StudentYaTeacher", 
       description:
         "Access learning materials, assignments, and track your progress",
@@ -28,8 +27,8 @@ const RoleSelectionPage = () => {
       id: "teacher",
       title: "Teacher",
       icon: "👨‍🏫",
-      image: "/teacher1.jpg", // Kept original image path
-      // Fixed: Use relative path only for fast navigation
+      image: "/teacher1.jpg", 
+      // CRITICAL FIX: Use relative path only for fast navigation
       redirectUrl: "/StudentYaTeacher/teachers", 
       description: "Create courses, manage students, and track their performance",
       styleClass: "role-teacher-color",
@@ -38,8 +37,8 @@ const RoleSelectionPage = () => {
       id: "administrator",
       title: "Administrator",
       icon: "👨‍💼",
-      image: "/il.jpg", // Kept original image path
-      // Fixed: Use relative path only for fast navigation
+      image: "/il.jpg", 
+      // CRITICAL FIX: Use relative path only for fast navigation
       redirectUrl: "/dashboard", 
       description: "Manage system settings, users, and oversee all activities",
       styleClass: "role-admin-color",
@@ -58,10 +57,13 @@ const RoleSelectionPage = () => {
       // Using localStorage as in the original code.
       if (typeof window !== "undefined") {
          localStorage.setItem("userRole", selectedRole);
+         
+         // FINAL FIX: Use window.location.assign for reliable navigation 
+         // when Next.js routing modules fail to resolve.
+         window.location.assign(selected.redirectUrl);
       }
-
-      // CRITICAL FIX: Push the RELATIVE path only.
-      router.push(selected.redirectUrl);
+      
+      // Note: We avoid setting isLoading(false) here because navigation is imminent.
     }
   };
 
@@ -100,9 +102,6 @@ const RoleSelectionPage = () => {
                 <h3 className="role-card-title">{role.title}</h3>
               </div>
 
-              {/* Restored the original image container structure, including the fallback logic 
-                  that was present in the code you provided in the conversation history. 
-              */}
               <div className="role-image-container">
                 <div className="role-image-circle">
                   <img

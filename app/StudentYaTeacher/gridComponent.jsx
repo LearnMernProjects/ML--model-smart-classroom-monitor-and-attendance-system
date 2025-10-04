@@ -1,6 +1,6 @@
 import React from 'react';
 
-const gridComponent = () => {
+const GridComponent = () => {
   // Grid configuration
   const GRID_SIZE = 12; // 12x12 grid for better visualization
   const RED_ZONE_SIZE = 4; // 4x4 red zone in bottom-right
@@ -122,4 +122,4 @@ const gridComponent = () => {
   );
 };
 
-export default gridComponent;
+export default GridComponent;

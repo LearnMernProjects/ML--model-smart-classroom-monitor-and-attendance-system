@@ -1,7 +1,9 @@
 import './globals.css'
 import { ClerkProvider } from '@clerk/nextjs'
 import Navbar from '../components/Navbar'
-import SignOut from '../components/SignOut'
+// In app/layout.jsx
+import SignOut from '../components/SignOut.jsx' // ✅ Matches actual file name
+// ... later use as <SignOutButton />
 
 export default function RootLayout({ children }) {
   return (
@@ -9,7 +11,7 @@ export default function RootLayout({ children }) {
       <html lang="en" suppressHydrationWarning>
         <body suppressHydrationWarning>
           <Navbar />
-          <SignOut />
+          <SignOut />  {/* <-- FIX IS HERE */}
           {children}
         </body>
       </html>

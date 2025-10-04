@@ -2,10 +2,10 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import Chart from 'chart.js/auto';
-import GridComponent from './gridComponent.jsx';
+import GridComponent from '../gridComponent.jsx'; // ✅ CORRECT PATH
 import Link from 'next/link.js';
 // Fixed import path
-import AttendanceControl from '../../components/AttendanceControl'; 
+import AttendanceControl from '../../../components/AttendanceControl'; // ✅ Compiler looks inside '/components/' (Root)
 
 // Add this line:
 console.log('AttendanceControl component:', AttendanceControl);
