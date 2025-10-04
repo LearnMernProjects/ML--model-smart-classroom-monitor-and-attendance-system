@@ -50,36 +50,36 @@ const Dashboard = () => {
 
       <div className="flex flex-row md:flex-row p-3 gap-6 mb-8">
         {/* Total Students */}
-        <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="bg-white rounded-lg shadow-md p-6 border-l-4 m-3 flex-1 text-black" style={{
+        <div initial={{ scale: 0 }} animate={{ scale: 1 }} className="bg-white rounded-lg shadow-md p-6 border-l-4 m-3 flex-1 text-black" style={{
           borderLeft: '4px solid #3b82f6'
         }}>
           <h3 className="text-gray-600 text-sm font-medium mb-2">Total Students</h3>
           <p className="text-3xl font-bold text-blue-600">2</p>
-        </motion.div>
+        </div>
 
         {/* With Photos */}
-        <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="bg-white rounded-lg shadow-md p-6 border-l-4 m-3 flex-1 text-black" style={{
+        <div initial={{ scale: 0 }} animate={{ scale: 1 }} className="bg-white rounded-lg shadow-md p-6 border-l-4 m-3 flex-1 text-black" style={{
           borderLeft: '4px solid #3b82f6'
         }}>
           <h3 className="text-gray-600 text-sm font-medium mb-2">With Photos</h3>
           <p className="text-3xl font-bold text-blue-600">2</p>
-        </motion.div>
+        </div>
 
         {/* With Voice */}
-        <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="bg-white rounded-lg shadow-md p-6 border-l-4 m-3 flex-1 text-black" style={{
+        <div initial={{ scale: 0 }} animate={{ scale: 1 }} className="bg-white rounded-lg shadow-md p-6 border-l-4 m-3 flex-1 text-black" style={{
           borderLeft: '4px solid #3b82f6'
         }}>
           <h3 className="text-gray-600 text-sm font-medium mb-2">With Voice</h3>
           <p className="text-3xl font-bold text-cyan-500">0</p>
-        </motion.div>
+        </div>
 
         {/* Standards */}
-        <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="bg-white rounded-lg shadow-md p-6 border-l-4 m-3 flex-1 text-black" style={{
+        <div initial={{ scale: 0 }} animate={{ scale: 1 }} className="bg-white rounded-lg shadow-md p-6 border-l-4 m-3 flex-1 text-black" style={{
           borderLeft: '4px solid #3b82f6'
         }}>
           <h3 className="text-gray-600 text-sm font-medium mb-2">Standards</h3>
           <p className="text-3xl font-bold text-blue-600">2</p>
-        </motion.div>
+        </div>
       </div>
 
       {/* Fixed 50-50 Layout with true black border and enhanced shadow */}
@@ -103,7 +103,7 @@ const Dashboard = () => {
           <div className="flex flex-col m-2" style={{ gap: '1.5rem' }}>
                 <div className="flex flex-row gap-6">
                     {/* Student Name */}
-                    <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="flex-1">
+                    <div initial={{ scale: 0 }} animate={{ scale: 1 }} className="flex-1">
                         <h2 className='leading-6 font-semibold text-lg'>Student Name</h2>
                         <textarea 
                             placeholder='Enter Student Name' 
@@ -111,10 +111,10 @@ const Dashboard = () => {
                             style={{ border: '2px solid #000000' }}
                             rows="1"
                         ></textarea>
-                    </motion.div>
+                    </div>
 
                     {/* Enter Date of Birth */}
-                    <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="flex-1">
+                    <div initial={{ scale: 0 }} animate={{ scale: 1 }} className="flex-1">
                         <h2 className='leading-6 font-semibold text-lg'>Enter Date of Birth</h2>
                         <input 
                             type="date" 
@@ -122,12 +122,12 @@ const Dashboard = () => {
                             className='w-full rounded-lg m-3 shadow-lg px-3 py-3 focus:ring-2 focus:ring-blue-200 focus:outline-none transition-all'
                             style={{ border: '2px solid #000000' }}
                         />
-                    </motion.div>
+                    </div>
                 </div>
 
-                <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="flex flex-row gap-9 leading-4">
+                <div initial={{ scale: 0 }} animate={{ scale: 1 }} className="flex flex-row gap-9 leading-4">
                      {/* Enter Phone Number */}
-                    <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="flex-1">
+                    <div initial={{ scale: 0 }} animate={{ scale: 1 }} className="flex-1">
                         <h2 className='leading-6 font-semibold text-lg'>Enter Phone Number</h2>
                         <input 
                             type="tel"
@@ -135,10 +135,10 @@ const Dashboard = () => {
                             className='w-full rounded-lg m-3 shadow-lg px-3 py-3 focus:ring-2 focus:ring-blue-200 focus:outline-none transition-all'
                             style={{ border: '2px solid #000000' }}
                         />
-                    </motion.div>
+                    </div>
                     
                     {/* Enter Standard/Grade */}
-                    <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }}  className="flex-1">
+                    <div initial={{ scale: 0 }} animate={{ scale: 1 }}  className="flex-1">
                         <h2 className='leading-6 font-semibold text-lg'>Enter Standard/Grade</h2>
                         <textarea 
                             placeholder='Enter Standard/Grade' 
@@ -146,8 +146,8 @@ const Dashboard = () => {
                             style={{ border: '2px solid #000000', margin: '12px' }}
                             rows="1"
                         ></textarea>
-                    </motion.div>
-                </motion.div>
+                    </div>
+                </div>
 
                 <div className="flex flex-row gap-9 leading-4">
                      {/* Student Photo */}
@@ -164,7 +164,7 @@ const Dashboard = () => {
                     </div>
                     
                     {/* Upload Student Voice recording*/}
-                    <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }}  className="flex-1">
+                    <div initial={{ scale: 0 }} animate={{ scale: 1 }}  className="flex-1">
                         <h2 className='leading-6 font-semibold text-lg'>Upload Student Voice recording</h2>
                         <input 
                             type="file" 
@@ -173,13 +173,13 @@ const Dashboard = () => {
                             className='w-full rounded-xl shadow-lg px-3 py-3 focus:ring-2 focus:ring-blue-200 focus:outline-none transition-all' 
                             style={{ border: '2px solid #000000', margin: '12px' }}
                         />
-                    </motion.div>
+                    </div>
                 </div>
 
                 {/* Submit Button */}
-                <motion.div className="flex items-center mt-6">
+                <div className="flex items-center mt-6">
                 <button type="submit" className="submit-button">Add Student</button>
-                </motion.div>
+                </div>
             </div>
         </div>
         
@@ -228,13 +228,13 @@ const Dashboard = () => {
                             
                             {/* Student Info */}
                             <div>
-                                <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }}  className="flex items-center space-x-9">
+                                <div initial={{ scale: 0 }} animate={{ scale: 1 }}  className="flex items-center space-x-9">
                                     <img src="./ig1.png" width={55} height={55} alt="Student"/>
                                     <h3 className="font-semibold text-lg text-black">Viraj Sanjay Naik</h3>
                                     <div className="grade inline-flex gap-7 mx-2 border border-gray-900 border-solid rounded-xl items-center text-sm text-gray-700 px-3 py-1">
                                         10th Grade
                                     </div>
-                                </motion.div>
+                                </div>
                                 
                                 <div className="flex items-center space-x-12 mt-1">
                                     <div className="date inline-flex items-center text-sm text-gray-600">
@@ -257,7 +257,7 @@ const Dashboard = () => {
                 </div>
 
                 {/* Student 2 - Sarah Chen */}
-                <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }}  className="bsd border border-gray-500 rounded-lg p-4 hover:shadow-md transition-shadow">
+                <div initial={{ scale: 0 }} animate={{ scale: 1 }}  className="bsd border border-gray-500 rounded-lg p-4 hover:shadow-md transition-shadow">
                     <div className="flex items-center justify-between">
                         <div className="flex items-center space-x-4">
                             {/* Student Photo */}
@@ -295,7 +295,7 @@ const Dashboard = () => {
                             </div>
                         </div>
                     </div>
-                </motion.div>
+                </div>
             </div>
         </div>
       </div>

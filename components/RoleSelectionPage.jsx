@@ -12,9 +12,9 @@ const RoleSelectionPage = () => {
 
     // ... (Your roles array remains the same)
     const roles = [
-      { id: 'student', title: 'Student', icon: '🎓', image: '/student1.jpg', redirectUrl: 'http://localhost:3000/StudentYaTeacher', description: 'Access learning materials, assignments, and track your progress', styleClass: 'role-student-color' },
-      { id: 'teacher', title: 'Teacher', icon: '👨‍🏫', image: '/teacher1.jpg', redirectUrl: 'http://localhost:3000/StudentYaTeacher/teachers', description: 'Create courses, manage students, and track their performance', styleClass: 'role-teacher-color' },
-      { id: 'administrator', title: 'Administrator', icon: '👨‍💼', image: '/il.jpg', redirectUrl: 'http://localhost:3000/dashboard', description: 'Manage system settings, users, and oversee all activities', styleClass: 'role-admin-color' }
+      { id: 'student', title: 'Student', icon: '🎓', image: '/student1.jpg', redirectUrl: 'http://localhost:3001/StudentYaTeacher', description: 'Access learning materials, assignments, and track your progress', styleClass: 'role-student-color' },
+      { id: 'teacher', title: 'Teacher', icon: '👨‍🏫', image: '/teacher1.jpg', redirectUrl: 'http://localhost:3001/StudentYaTeacher/teachers', description: 'Create courses, manage students, and track their performance', styleClass: 'role-teacher-color' },
+      { id: 'administrator', title: 'Administrator', icon: '👨‍💼', image: '/il.jpg', redirectUrl: 'http://localhost:3001/dashboard', description: 'Manage system settings, users, and oversee all activities', styleClass: 'role-admin-color' }
     ];
 
     const handleRoleSelect = (role) => {
