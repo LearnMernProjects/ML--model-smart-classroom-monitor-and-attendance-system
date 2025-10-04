@@ -1,10 +1,11 @@
 "use client"
 import React, { useState } from 'react';
-import { motion } from "framer-motion"
+import { motion as _motion} from "framer-motion"
 
 const Dashboard = () => {
-  const [selectedImage, setSelectedImage] = useState(null);
-  const [imagePreview, setImagePreview] = useState(null);
+  const [_selectedImage, _setSelectedImage] = useState(null);
+  const [_imagePreview, _setImagePreview] = useState(null);
+  
 
   const user = { firstName: 'User', emailAddresses: [{ emailAddress: 'user@example.com' }] };
 
