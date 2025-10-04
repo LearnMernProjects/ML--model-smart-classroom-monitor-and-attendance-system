@@ -3,7 +3,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Chart from 'chart.js/auto';
 import GridComponent from './gridComponent.jsx';
-import Link from 'next/link.js';
+useEffect(() => {
+  // your chart initialization code
+}, [chartRefs.distribution, chartRefs.monthly, chartRefs.subject, chartRefs.trend]);
 // Fixed import path
 import AttendanceControl from '../../components/AttendanceControl'; 
 
