@@ -36,7 +36,7 @@ export default function Slider() {
           <ul className="splide__list">
             <li
               className="splide__slide cursor-pointer text-center"
-              onClick={() => window.location.href = "http://localhost:3001/RoleSelectionPage"}
+              onClick={() => window.location.href = "http://localhost:{PORT}/RoleSelectionPage"}
             >
               <img src="./student1.jpg" width="73" height="73" className="img3 mx-auto" />
               Student
@@ -44,7 +44,7 @@ export default function Slider() {
 
             <li
               className="splide__slide cursor-pointer text-center"
-              onClick={() => window.location.href = "http://localhost:3001/RoleSelectionPage"}
+              onClick={() => window.location.href = "http://localhost:{PORT}/RoleSelectionPage"}
             >
               <img src="./teacher1.jpg" width="73" height="73" className="img3 mx-auto" />
               Teacher
@@ -52,7 +52,7 @@ export default function Slider() {
 
             <li
               className="splide__slide cursor-pointer text-center"
-              onClick={() => window.location.href = "http://localhost:3001/RoleSelectionPage"}
+              onClick={() => window.location.href = "http://localhost:{PORT}/RoleSelectionPage"}
             >
               <img src="./il.jpg" width="73" height="73" className="img3 mx-auto" />
               Administrator

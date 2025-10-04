@@ -8,7 +8,7 @@ import time
 from attendance_system import AttendanceSystem 
 
 app = Flask(__name__)
-# Enable CORS to allow your Next.js frontend (e.g., on port 3001) to access this server (on port 5000)
+# Enable CORS to allow your Next.js frontend (e.g., on port {PORT}) to access this server (on port 5000)
 CORS(app) 
 
 # Initialize the system once when the server starts
