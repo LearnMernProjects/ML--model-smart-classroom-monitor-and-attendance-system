@@ -19,7 +19,7 @@ const Teachers = () => {
     distribution: useRef(null),
     monthly: useRef(null),
   };
-
+// eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     const renderChart = (ref, data) => {
       if (ref.current) {
