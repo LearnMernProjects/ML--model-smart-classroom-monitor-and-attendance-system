@@ -12,10 +12,10 @@ const Dashboard = () => {
   const handleImageChange = (event) => {
     const file = event.target.files[0];
     if (file) {
-      setSelectedImage(file);
+      _setSelectedImage(file);
       const reader = new FileReader();
       reader.onload = (e) => {
-        setImagePreview(e.target.result);
+        _setImagePreview(e.target.result);
       };
       reader.readAsDataURL(file);
     }
