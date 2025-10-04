@@ -6,7 +6,6 @@ const Dashboard = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [imagePreview, setImagePreview] = useState(null);
 
-
   const user = { firstName: 'User', emailAddresses: [{ emailAddress: 'user@example.com' }] };
 
   const handleImageChange = (event) => {
@@ -20,15 +19,6 @@ const Dashboard = () => {
       reader.readAsDataURL(file);
     }
   };
-  
-  // Show loader while user data is loading
-  if (!isLoaded) {
-    return (
-      <div className="flex h-screen items-center justify-center text-5xl text-gray-600">
-        Loading...
-      </div>
-    );
-  }
 
   return (
     <div className="min-h-screen p-6 text-black" style={{ backgroundColor: '#F5F9FC' }}>
@@ -56,7 +46,7 @@ const Dashboard = () => {
           </p>
         </div>
       )}
-file
+
       <div className="flex flex-row md:flex-row p-3 gap-6 mb-8">
         {/* Total Students */}
         <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="bg-white rounded-lg shadow-md p-6 border-l-4 m-3 flex-1 text-black" style={{
