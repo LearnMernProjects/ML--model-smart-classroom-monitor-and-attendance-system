@@ -5,8 +5,6 @@ import Chart from 'chart.js/auto';
 import GridComponent from './gridComponent.jsx';
 import AttendanceControl from '../../components/AttendanceControl';
 
-console.log('AttendanceControl component:', AttendanceControl);
-
 const Teachers = () => {
   const [activeSection, setActiveSection] = useState('overview');
   const [selectedClass, setSelectedClass] = useState('10A');
@@ -15,7 +13,6 @@ const Teachers = () => {
   const [isAttendanceRunning, setIsAttendanceRunning] = useState(false);
   const [presentStudents, setPresentStudents] = useState([]);
 
-  // ✅ Define chartRefs INSIDE the component
   const chartRefs = {
     trend: useRef(null),
     subject: useRef(null),
@@ -23,7 +20,6 @@ const Teachers = () => {
     monthly: useRef(null),
   };
 
-  // ✅ useEffect should also be INSIDE the component
   useEffect(() => {
     const renderChart = (ref, data) => {
       if (ref.current) {
@@ -92,12 +88,56 @@ const Teachers = () => {
       renderChart(chartRefs.distribution, distributionData);
       renderChart(chartRefs.monthly, monthlyTrendData);
     }
-  }, [activeSection]); // ✅ dependencies only
+  }, [activeSection]);
 
-  // --- Rest of your component (UI) remains exactly the same ---
-  // (keep your renderSection(), handleNavClick(), and return part unchanged)
-  
-  // return (...)
+  return (
+    <div className="p-6">
+      {/* Navigation */}
+      <div className="mb-4">
+        <button onClick={() => setActiveSection('overview')}>Overview</button>
+        <button onClick={() => setActiveSection('reports')}>Reports</button>
+      </div>
+
+      {/* Class and Subject Selection */}
+      <select value={selectedClass} onChange={(e) => setSelectedClass(e.target.value)}>
+        <option value="10A">10A</option>
+        <option value="10B">10B</option>
+      </select>
+
+      <select value={selectedSubject} onChange={(e) => setSelectedSubject(e.target.value)}>
+        <option value="math">Math</option>
+        <option value="physics">Physics</option>
+      </select>
+
+      {/* Attendance Control */}
+      <AttendanceControl
+        isRunning={isAttendanceRunning}
+        onStart={() => setIsAttendanceRunning(true)}
+        onStop={() => setIsAttendanceRunning(false)}
+        presentStudents={presentStudents}
+        onStudentsUpdate={setPresentStudents}
+        status={attendanceStatus}
+        onStatusChange={setAttendanceStatus}
+      />
+
+      {/* Charts */}
+      {activeSection === 'overview' && (
+        <div>
+          <canvas ref={chartRefs.trend} />
+          <canvas ref={chartRefs.subject} />
+        </div>
+      )}
+
+      {activeSection === 'reports' && (
+        <div>
+          <canvas ref={chartRefs.distribution} />
+          <canvas ref={chartRefs.monthly} />
+        </div>
+      )}
+
+      <GridComponent />
+    </div>
+  );
 };
 
 export default Teachers;
