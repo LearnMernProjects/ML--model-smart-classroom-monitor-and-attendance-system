@@ -9,7 +9,7 @@ import StudentYaTeacherPage from "./StudentYaTeacher/page.js"
 import RoleSelectionPage from './RoleSelectionPage.jsx';
 
 export default function Slider() {
-  const router = useRouter();
+  const _router = useRouter();
   
   useEffect(() => {
     const splide = new Splide('.splide', {
