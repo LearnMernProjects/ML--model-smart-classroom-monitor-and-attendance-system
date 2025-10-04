@@ -1,6 +1,6 @@
 "use client"
 import React, { useState } from 'react';
-import { motion } from "motion/react"
+import { motion } from "framer-motion"
 
 const Dashboard = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -58,7 +58,7 @@ const Dashboard = () => {
           </p>
         </div>
       )}
-
+file
       <div className="flex flex-row md:flex-row p-3 gap-6 mb-8">
         {/* Total Students */}
         <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="bg-white rounded-lg shadow-md p-6 border-l-4 m-3 flex-1 text-black" style={{
@@ -166,6 +166,8 @@ const Dashboard = () => {
                         <h2 className='leading-6 font-semibold text-lg'>Upload Student Image</h2>
                         <input 
                             type="file" 
+                            onChange={handleImageChange}
+
                             accept="image/*"
                             className='w-full rounded-xl shadow-lg px-3 py-3 focus:ring-2 focus:ring-blue-200 focus:outline-none transition-all' 
                             style={{ border: '2px solid #000000', margin: '12px' }}
@@ -177,6 +179,7 @@ const Dashboard = () => {
                         <h2 className='leading-6 font-semibold text-lg'>Upload Student Voice recording</h2>
                         <input 
                             type="file" 
+                            
                             accept="audio/*"
                             className='w-full rounded-xl shadow-lg px-3 py-3 focus:ring-2 focus:ring-blue-200 focus:outline-none transition-all' 
                             style={{ border: '2px solid #000000', margin: '12px' }}

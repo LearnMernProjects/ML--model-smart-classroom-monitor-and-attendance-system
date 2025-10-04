@@ -6,7 +6,7 @@ import AttendanceControl from '../../../../components/AttendanceControl';
 export default function MarkAttendancePage() {
     const [isAttendanceRunning, setIsAttendanceRunning] = useState(false);
     const [presentStudents, setPresentStudents] = useState([]);
-    const [attendanceStatus, setAttendanceStatus] = useState('Ready to start attendance.');
+    const [ setAttendanceStatus] = useState('Ready to start attendance.');
 
     return (
         <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
