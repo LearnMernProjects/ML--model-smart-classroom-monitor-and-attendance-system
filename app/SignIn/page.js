@@ -9,7 +9,7 @@ const SignIn = dynamic(() => import('@clerk/nextjs').then(mod => ({ default: mod
 
 export default function Page1() {
   const { isLoaded } = useUser();
-  const [authMode, setAuthMode] = React.useState('signup');
+  const [authMode, _setAuthMode] = React.useState('signup');
 
   if (!isLoaded) {
     return (
