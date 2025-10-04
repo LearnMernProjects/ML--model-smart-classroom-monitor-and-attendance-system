@@ -6,9 +6,7 @@ const Dashboard = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [imagePreview, setImagePreview] = useState(null);
 
-  // Removed Clerk-related logic as the library is not available in this environment
-  // and will be replaced with a static display.
-  const isLoaded = true; // Simulating a loaded state
+
   const user = { firstName: 'User', emailAddresses: [{ emailAddress: 'user@example.com' }] };
 
   const handleImageChange = (event) => {

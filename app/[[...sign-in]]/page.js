@@ -29,7 +29,7 @@ const Page1 = () => {
       sessionStorage.setItem('StudentYaTeacherRedirected', 'true');
       router.push('/StudentYaTeacher');
     }
-  }, [isSignedIn, isLoaded]);
+  }, [isSignedIn, isLoaded, router]);
   
 
   // ⏳ Optional: loader while redirecting
