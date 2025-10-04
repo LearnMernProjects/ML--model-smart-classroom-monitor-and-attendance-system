@@ -17,6 +17,7 @@ const SignIn = dynamic(() => import('@clerk/nextjs').then(mod => ({ default: mod
 });
 
 const Page1 = () => {
+  // eslint-disable-next-line no-unused-vars
   const [authMode, setAuthMode] = useState('signup');
   const { isSignedIn, isLoaded } = useUser();
   const router = useRouter();
@@ -46,7 +47,6 @@ const Page1 = () => {
   if (!isLoaded) {
     return (
       <div className="flex h-screen items-center justify-center text-xl text-gray-600">
-      
       </div>
     );
   }
@@ -102,15 +102,16 @@ const Page1 = () => {
             </button>
           </div>
           
-          <button onClick={() => router.push('/Users')} className="mt-4 w-full bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700">
-              Go to 
-            </button>
+          <button 
+            onClick={() => router.push('/Users')} 
+            className="mt-4 w-full bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700"
+          >
+            Go to 
+          </button>
 
           <div className="bg-white rounded-lg p-6 shadow-lg">
             {authMode === 'signup' ? (
               <SignUp fallbackRedirectUrl="/RoleSelectionPage" />
-             
-
             ) : (
               <SignIn fallbackRedirectUrl="/RoleSelectionPage" />
             )}
