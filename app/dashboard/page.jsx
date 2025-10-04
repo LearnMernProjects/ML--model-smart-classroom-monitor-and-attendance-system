@@ -1,6 +1,6 @@
 "use client"
 import React, { useState } from 'react';
-import { motion } from "motion/react"
+import { motion } from "framer-motion"
 
 const Dashboard = () => {
   const [_selectedImage, _setSelectedImage] = useState(null);
@@ -229,7 +229,7 @@ const Dashboard = () => {
                             {/* Student Info */}
                             <div>
                                 <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }}  className="flex items-center space-x-9">
-                                    <img src="./ig1.png" width={55} height={55}/>
+                                    <img src="./ig1.png" width={55} height={55} alt="Student"/>
                                     <h3 className="font-semibold text-lg text-black">Viraj Sanjay Naik</h3>
                                     <div className="grade inline-flex gap-7 mx-2 border border-gray-900 border-solid rounded-xl items-center text-sm text-gray-700 px-3 py-1">
                                         10th Grade
@@ -270,7 +270,7 @@ const Dashboard = () => {
                             {/* Student Info */}
                             <div>
                                 <div className="flex items-center space-x-6">
-                                <img src="./ig1.png" width={55} height={55}/>
+                                <img src="./ig1.png" width={55} height={55} alt="Student"/>
                                     <h3 className="font-semibold text-lg text-black">Jay Bhokare</h3>
                                     <div className="grade inline-flex items-center text-sm text-gray-600">
                                         9th Grade
