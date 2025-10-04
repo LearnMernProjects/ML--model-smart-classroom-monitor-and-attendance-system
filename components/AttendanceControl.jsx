@@ -78,7 +78,7 @@ const AttendanceControl = ({
                 setStatusMessage(`Error: ${data.error || 'Failed to process request.'}`);
                 setAttendanceStatus(`API Error: ${data.error || 'Check Python logs.'}`);
             }
-        } catch (error) {
+        } catch {
             setStatusMessage(`Connection Error: Python API server failed to respond.`);
         } finally {
             setIsProcessing(false);
